@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" integrity="sha512-YHuwZabI2zi0k7c9vtg8dK/63QB0hLvD4thw44dFo/TfBFVVQOqEG9WpviaEpbyvgOIYLXF1n7xDUfU3GDs0sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flexboxgrid-helpers@1.1.3/dist/flexboxgrid-helpers.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="row between-md middle-md nav">
+            <div class="col-md-5">
+                <h3>IT Step CardMaker</h3>
+            </div>
+            <a href="#" onclick="download()" class="col-md-2 btn">
+                <span class="hidden-sm">Скачать итог</span>
+                <img width="12px" src="img/download.png" alt="">
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 editor">
+                <canvas id="c" width="490" height="770"></canvas>
+                <div class="tools">
+                    <a href="#">
+                        <img src="img/new-moon.png" onclick="addCircle()" width="24px" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="img/rectangle (1).png" onclick="addRect()" width="24px" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="img/trash.png" onclick="removeSelected()" width="24px" alt="">
+                    </a>
+                    
+                    <input type="color" name="shapeColorInput" id="shapeColorInput" onchange="changeColor()">
+                    
+                </div>
+            </div>
+
+            <div class="col-md-4 cardForm">
+                <div class="input">
+                    <h4>Название карты:</h4>
+                    <input type="text" name="cardName" id="cardName" onchange="nameChange()" placeholder="Бессмертная игуана">
+                </div>
+
+                <div class="input">
+                    <h4>Описание карты:</h4>
+                    <textarea name="cardDescription" id="cardDescription" onchange="desckriptionChange()" rows="6" placeholder="Опишите вашу карту"></textarea>
+                    <p>До 150 символов</p>
+                </div>
+
+                <div class="input">
+                    <h4>Изображение карты:</h4>
+                    <div class="loadFile">
+                        <a href="#" style="width: 100%;" onclick="cardImage.click()" class="btn">Загрузить картинку</a>
+                        <input type="file" name="cardImage" id="cardImage" onchange="loadCardImage()" accept="image/png, image/gif, image/jpeg" />
+                    </div>
+                    <p>Изображение размером 450x380 пикселей</p>
+                </div>
+
+                <div class="input">
+                    <h4>Рамка карты:</h4>
+                    <div class="loadFile">
+                        <a href="#" style="width: 100%;" onclick="cardBorderImage.click()" class="btn">Загрузить картинку</a>
+                        <input type="file" name="cardBorderImage" id="cardBorderImage" onchange="loadCardBorder()" accept="image/png, image/gif, image/jpeg" />
+                    </div>
+                    <p>Изображение размером 490x770 пикселей</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/460/fabric.min.js" integrity="sha512-ybPp3kCrNQXdvTfh99YLIdnajWnQvHuEKDJ+b26mxI9w+pLhnBo3HmNLJ1pEUBFO1Q0bfJxApeqecNbmaV763g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+</html>
