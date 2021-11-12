@@ -117,6 +117,7 @@ textarea{
     outline: none;
     border: none;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .input p{
@@ -160,6 +161,37 @@ textarea{
         width: 706px;
     }
 
+    .tools{
+        gap: 12px;
+        flex-direction: row;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+
+    h3{
+        font-size: 24px;
+    }
+
+    .tools a,.tools input{
+        height: 32px;
+        width: 32px;
+        border-radius: 4px;
+        padding: 4px;
+    }
+
+    .editor{
+        padding-top: 80px;
+    }
+
+    .cardForm{
+        padding-left: 0px;
+    }
+
+    .tools img{
+        width: 24px;
+        height: 24px;
+    }
+
     .btn img{
         margin-left: 0px;
     }
@@ -182,6 +214,18 @@ textarea{
 
     .btn img{
         margin-left: 0px;
+    }
+
+    .tools{
+        flex-wrap: wrap;
+    }
+
+    .canvas-container{
+        transform: scale(0.5) translate(-110px, 40px);
+    }
+
+    .editor{
+        height: 500px;
     }
 }
 

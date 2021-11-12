@@ -12,20 +12,27 @@
 <body>
     <div class="container">
 
-        <div class="row between-md middle-md nav">
+        <div class="row between-md middle-md between-xs middle-xs between-sm middle-sm nav">
             <div class="col-md-5">
                 <h3>IT Step CardMaker</h3>
             </div>
             <a href="#" onclick="downloadCanvas()" class="col-md-2 btn">
-                <span class="hidden-sm">Скачать итог</span>
+                <span class="hidden-sm hidden-xs">Скачать итог</span>
                 <img width="12px" src="img/download.png" alt="">
             </a>
         </div>
 
         <div class="row">
-            <div class="col-md-8 editor">
+            <div class="col-md-8  col-sm-12 col-xs-12  editor">
                 <canvas id="c" width="490" height="770"></canvas>
                 <div class="tools">
+                    <a href="#">
+                        <img src="img/text.png" onclick="addText()" width="24px" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="img/image (1).png" onclick="customImage.click()" width="24px" alt="">
+                        <input type="file" name="customImage" style="display: none;" id="customImage" onchange="loadImage()" accept="image/png, image/gif, image/jpeg" />
+                    </a>
                     <a href="#">
                         <img src="img/new-moon.png" onclick="addCircle()" width="24px" alt="">
                     </a>
@@ -35,13 +42,21 @@
                     <a href="#">
                         <img src="img/trash.png" onclick="removeSelected()" width="24px" alt="">
                     </a>
+
+                    <a href="#">
+                        <img src="img/arrow-up.png" onclick="sendFront()" width="24px" alt="">
+                    </a>
+
+                    <a href="#">
+                        <img src="img/arrow-up (1).png" onclick="sendBack()" width="24px" alt="">
+                    </a>
                     
                     <input type="color" name="shapeColorInput" id="shapeColorInput" onchange="changeColor()">
                     
                 </div>
             </div>
 
-            <div class="col-md-4 cardForm">
+            <div class="col-md-4 col-sm-12 col-xs-12 cardForm">
                 <div class="input">
                     <h4>Название карты:</h4>
                     <input type="text" name="cardName" id="cardName" onchange="nameChange()" placeholder="Бессмертная игуана">
@@ -56,7 +71,7 @@
                 <div class="input">
                     <h4>Изображение карты:</h4>
                     <div class="loadFile">
-                        <a href="#" style="width: 100%;" onclick="cardImage.click()" class="btn">Загрузить картинку</a>
+                        <a href="#" onclick="cardImage.click()" class="btn">Загрузить картинку</a>
                         <input type="file" name="cardImage" id="cardImage" onchange="loadCardImage()" accept="image/png, image/gif, image/jpeg" />
                     </div>
                     <p>Изображение размером 450x380 пикселей</p>
@@ -65,7 +80,7 @@
                 <div class="input">
                     <h4>Рамка карты:</h4>
                     <div class="loadFile">
-                        <a href="#" style="width: 100%;" onclick="cardBorderImage.click()" class="btn">Загрузить картинку</a>
+                        <a href="#" onclick="cardBorderImage.click()" class="btn">Загрузить картинку</a>
                         <input type="file" name="cardBorderImage" id="cardBorderImage" onchange="loadCardBorder()" accept="image/png, image/gif, image/jpeg" />
                     </div>
                     <p>Изображение размером 490x770 пикселей</p>
