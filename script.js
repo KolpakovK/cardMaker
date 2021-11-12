@@ -151,9 +151,9 @@ function desckriptionChange(){
 }
 
 
-function download(){
+function downloadCanvas(){
     var link = document.createElement('a');
     link.download = 'filename.png';
-    link.href = document.getElementById('canvas').toDataURL()
+    link.href = document.getElementById('c').toDataURL()
     link.click();
   }
