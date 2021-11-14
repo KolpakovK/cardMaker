@@ -63,6 +63,17 @@
                 </div>
 
                 <div class="input">
+                    <h4>Стоимость карты:</h4>
+                    <input type="text" name="cardCost" id="cardCost" onchange="costChange()" placeholder="10">
+                </div>
+
+                <div class="input">
+                    <h4>Сила и жизни карты:</h4>
+                    <input type="text" name="cardPower" id="cardPower" onchange="powerChange()" placeholder="1/2">
+                    <p>Сначала сила, а потом жизни</p>
+                </div>
+
+                <div class="input">
                     <h4>Описание карты:</h4>
                     <textarea name="cardDescription" id="cardDescription" onchange="desckriptionChange()" rows="6" placeholder="Опишите вашу карту"></textarea>
                     <p>До 150 символов</p>
